@@ -28,7 +28,7 @@ header h1 {
 }
 
 header Nav {
-    margin-top:15px;
+    margin:15px 20px;
 }
 
 header a {
@@ -36,6 +36,16 @@ header a {
     color:rgb(220, 224, 245);
     font-size: 90%;
     margin:10px;
+}
+
+
+#profile-pic {
+    height: 50%;
+    border: 10px solid var(--femclr);
+    border-style: ridge;
+    position:absolute;
+    right:20px;
+    top:70px;
 }
 
 pre {
