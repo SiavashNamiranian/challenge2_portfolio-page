@@ -1,18 +1,17 @@
 html {
-    width:fit-content;
+    width:fit-content;/*make all element take up vw unless defined*/  
 }
 
-/*flex-wrap: wrap;*/  
+/* sets default margin and padding to zer0*/  
 * {
     margin:0;
     padding:0;
-    box-sizing: content-box;
 }
 
 
 
 
-/*flex-wrap: wrap;*/  
+/*sets up some variable for commonly used color, also allowing global changes*/  
 :root{
     --femclr:#49ACE7;
     --fntclr: rgb(26, 77, 230); 
@@ -21,26 +20,26 @@ html {
 
 
 
-/*flex-wrap: wrap;*/  
+/*background of the portfolio*/  
 body{
     background-image:url("../image/background.jpg");
 }
 
 
 
-/*flex-wrap: wrap;*/  
+/*header formating*/  
 header {
     font-family:"Cambria", "Cochin", Georgia, Times, 'Times New Roman', serif;
     background-image: linear-gradient(to right, rgb(56, 204, 224), rgb(22, 92, 162), rgb(3, 51, 99));
     font-size: 120%;
     padding: 15px 15px;
-    display: flex;
+    display: flex; /*allows elements to line up in row and be wrapped upon screen width changing*/ 
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between;/*keeps h1 and Nav on the opposite ends */ 
 }    
 
-/*flex-wrap: wrap;*/  
+/*h1 formatting making it suitable for flex*/  
 header h1 {
     color:rgb(210, 232, 17);
     display:inline-block;
@@ -50,7 +49,7 @@ header h1 {
 
 
 
-/*flex-wrap: wrap;*/  
+/*formatting Nav also making fit for flex*/  
 header Nav {
     margin:15px 20px;   
     display: inline-block;
@@ -59,7 +58,7 @@ header Nav {
 
 
 
-/*flex-wrap: wrap;*/  
+/*formatting nav links, also to not have underline*/  
 header a {
     text-decoration: none;
     color:rgb(220, 224, 245);
@@ -68,82 +67,74 @@ header a {
 }
 
 
-
+/*making elements in main be part of flex which allows reconfig upon vw changes */ 
 main {
     display: flex;
     flex-flow: column;
 }
 
 
-main> img {
-    width: 10vw;
-    height: 40vh;
-}
-
-/*flex-wrap: wrap;*/  
+/*making formatting on profile pic, limting its max height and making width accordingly adjust */  
 #profile-pic {
-    max-height: 35%;
+    height: 40vh;
     width:auto;
     border: 10px solid var(--femclr);
     border-style: ridge;
-    position:absolute;
+    position:absolute; /*makes image not pushing anything around by taking space*/
     right:20px;
     top:65px;
 }
 
 
 
-/*flex-wrap: wrap;*/  
+/*wall paper formatting*/  
 pre {
     font-size: 500%;
     font-weight: bold;
     text-shadow: 10px 10px 2px rgb(0, 0, 0);
     color:var(--femclr);
     text-align: center;
-    white-space:pre-wrap;
+    white-space:pre-wrap;/*assure pre wraps as screen width or zoom changes*/
     padding: 150px;
     background-image: linear-gradient(to top left, rgb(240, 240, 245), rgb(178, 216, 207), yellow);
-    display:inline;
-
 }
 
-
+/*keeps each part of span element as whole as it gets wrapped*/  
 span.break {
     display: inline-block;
     min-width: 322px;
 }
 
 
-/*flex-wrap: wrap;*/  
+/*gives section flex, allowing title and corresponding content get in a line*/  
 section {
     display:flex;
     flex-wrap: wrap;
-    /* justify-content: space-between; */
 }
 
 
 
-/*flex-wrap: wrap;*/  
+/*h2 formatting making it stands against background and suitable for flex container*/  
 h2 {
 color:white;
 text-shadow: 2px 2px 10px red;
 font-size: 350%;
 display: inline-block;
 padding: 50px; 
-min-width: 22vw; /*added to help keep p elemets aligned*/ 
+min-width: 22vw; /*added to help keep content elemets aligned by having every content have same amount of space to its left*/ 
 
 }
 
 
 
-/*flex-wrap: wrap;*/  
+/*content container fomatting*/  
 p {
     width: 800px;
     height: 300px;
     background-image:linear-gradient(to top left, rgb(240, 240, 245), rgb(178, 216, 207), yellow);
-    background-size: 830px;
-    background-repeat: no-repeat;
-    background-position-x: right;
+    background-size: 830px; /*by setting this less than 840px width of whole element,can see the background between content and border*/  
+    background-repeat: no-repeat;/*does not try to fill the gap between border and background*/  
+    background-position-x: right;/*allow the visible portion of page background fall on left */  
     opacity:95%;
     overflow-wrap: break-word;
     border-left:5px solid rgb(215, 21, 21);
@@ -155,14 +146,14 @@ p {
 }
 
 
-/*flex-wrap: wrap;*/  
+/*with this id selector education section can be given enough separation from about me section*/  
 #Education {
     margin-top: 20px;
 }
 
 
 
-/*flex-wrap: wrap;*/  
+/*formats the projects section through its id making it a container for the links while matching it to other sections above it*/  
 #Project-history {
     background-image:linear-gradient(to top left, rgb(240, 240, 245), rgb(178, 216, 207), yellow);
     background-size: 830px;
@@ -175,16 +166,14 @@ p {
     right:20px;
     margin-top: 20px;
     border-left: 5px solid rgb(213, 12, 12);   
-    flex-wrap: wrap;
-    width:800px;
-    /* justify-content:space-between; */
-   
+    flex-wrap: wrap;     /* allow project links to be wrapped into the container */
+    width:800px; 
 }
 
 
 
 
-/*flex-wrap: wrap;*/  
+/*formats Ai project plceholder using its id*/  
 #Ai {
     border:5px solid rgb(240, 217, 13);
     width: 700px;
@@ -192,30 +181,29 @@ p {
 }
 
 
-
-/*flex-wrap: wrap;*/  
+/*formats web development project plceholder using its id*/  
 #coding{
     border:5px solid rgb(240, 217, 13);
     width: 350px;
     height: 306px;
-    margin:20px 0;
+    margin:20px 5px;
 }
 
 
 
 
-/*flex-wrap: wrap;*/  
+/*formats solar car project plceholder using its id*/  
 #solar {
     border:5px solid rgb(240, 217, 13);
     width: 400px;
-    margin:20px 0
+    margin:20px 5px;
 }
 
 
 
 
 
-/*flex-wrap: wrap;*/  
+/*formats project plceholder captions using its id*/    
 figcaption {
     margin-top: -50px;
     margin-left:50px;
@@ -227,7 +215,7 @@ figcaption {
 
 
 
-/*flex-wrap: wrap;*/  
+/*formats links to change color as cursor hover over them, also cursor changes shape opon hovering*/   
 a:hover {
     filter:brightness(50%);
     cursor:pointer;
@@ -236,7 +224,7 @@ a:hover {
 
 
 
-/*flex-wrap: wrap;*/  
+/*allows links to change to red color upon being selected*/  
 a:active {
     color:red;
 }
@@ -244,7 +232,7 @@ a:active {
 
 
 
-/*flex-wrap: wrap;*/  
+/*"contact me" section formatting using its id*/  
 #Contact-me {
     background-image:linear-gradient(to top left, rgb(240, 240, 245), rgb(178, 216, 207), yellow);
     background-size: 830px;
@@ -266,7 +254,7 @@ a:active {
 
 
 
-/*flex-wrap: wrap;*/  
+/*formats contact me section links*/  
 #Contact-me a {
     color: var(--fntclr);
     font-size: 200%;
@@ -274,22 +262,20 @@ a:active {
 
 
 
-/*flex-wrap: wrap;*/
+/*makes content responsive to screen size changes*/
 
-@media screen and (min-width:250px) and (max-width:850px) {
-    header, section, #Project-history, pre {
+@media screen and (min-width:200px) and (max-width:850px) {
+    header, section, #Project-history, pre { /*changes the flex direction & makes titles be centerd above each section content */  
       flex-direction: column;
       align-items: center;
     }
-    #profile-pic{
+    #profile-pic{      /* readjust profile img size to not cover other elemnets in smaller screens */
         top: 150px;
         height:20%;
         margin: 0 auto;
     }
-    #Contact-me {
-        flex-direction: row;
-    }
 
+    /*makes content more visually pleasant and followable*/
     h2 {
         position:relative;
         top:30px; 
@@ -307,7 +293,7 @@ a:active {
 }
 
 
-@media screen and (max-width: 1233px) {
+@media screen and (max-width: 1244px) {
     #Project-history {
       flex-direction: column;
       justify-content: center;
