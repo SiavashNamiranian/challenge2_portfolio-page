@@ -1,36 +1,65 @@
+html {
+    width:fit-content;
+}
+
+/*flex-wrap: wrap;*/  
 * {
     margin:0;
     padding:0;
+    box-sizing: content-box;
 }
 
+
+
+
+/*flex-wrap: wrap;*/  
 :root{
     --femclr:#49ACE7;
     --fntclr: rgb(26, 77, 230); 
 }
 
+
+
+
+/*flex-wrap: wrap;*/  
 body{
     background-image:url("../image/background.jpg");
 }
 
+
+
+/*flex-wrap: wrap;*/  
 header {
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family:"Cambria", "Cochin", Georgia, Times, 'Times New Roman', serif;
     background-image: linear-gradient(to right, rgb(56, 204, 224), rgb(22, 92, 162), rgb(3, 51, 99));
     font-size: 120%;
     padding: 15px 15px;
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     justify-content: space-between;
 }    
 
+/*flex-wrap: wrap;*/  
 header h1 {
     color:rgb(210, 232, 17);
     display:inline-block;
     text-shadow: 2px 5px 5px #074265;
 }
 
+
+
+
+/*flex-wrap: wrap;*/  
 header Nav {
-    margin:15px 20px;
+    margin:15px 20px;   
+    display: inline-block;
+    position: relative;
 }
 
+
+
+/*flex-wrap: wrap;*/  
 header a {
     text-decoration: none;
     color:rgb(220, 224, 245);
@@ -39,42 +68,75 @@ header a {
 }
 
 
+
+main {
+    display: flex;
+    flex-flow: column;
+}
+
+
+main> img {
+    width: 10vw;
+    height: 40vh;
+}
+
+/*flex-wrap: wrap;*/  
 #profile-pic {
-    height: 50%;
+    max-height: 35%;
+    width:auto;
     border: 10px solid var(--femclr);
     border-style: ridge;
     position:absolute;
     right:20px;
-    top:70px;
+    top:65px;
 }
 
+
+
+/*flex-wrap: wrap;*/  
 pre {
     font-size: 500%;
     font-weight: bold;
     text-shadow: 10px 10px 2px rgb(0, 0, 0);
     color:var(--femclr);
     text-align: center;
+    white-space:pre-wrap;
     padding: 150px;
     background-image: linear-gradient(to top left, rgb(240, 240, 245), rgb(178, 216, 207), yellow);
+    display:inline;
+
 }
 
+
+span.break {
+    display: inline-block;
+    min-width: 322px;
+}
+
+
+/*flex-wrap: wrap;*/  
 section {
     display:flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
 }
 
+
+
+/*flex-wrap: wrap;*/  
 h2 {
 color:white;
 text-shadow: 2px 2px 10px red;
 font-size: 350%;
-/*width: 400px;*/
 display: inline-block;
 padding: 50px; 
-/*box-sizing: border-box;*/
-/*flex-wrap: wrap;*/   
+min-width: 22vw; /*added to help keep p elemets aligned*/ 
+
 }
 
 
+
+/*flex-wrap: wrap;*/  
 p {
     width: 800px;
     height: 300px;
@@ -93,11 +155,14 @@ p {
 }
 
 
-
+/*flex-wrap: wrap;*/  
 #Education {
     margin-top: 20px;
 }
 
+
+
+/*flex-wrap: wrap;*/  
 #Project-history {
     background-image:linear-gradient(to top left, rgb(240, 240, 245), rgb(178, 216, 207), yellow);
     background-size: 830px;
@@ -112,17 +177,23 @@ p {
     border-left: 5px solid rgb(213, 12, 12);   
     flex-wrap: wrap;
     width:800px;
-    justify-content:space-between;
+    /* justify-content:space-between; */
    
 }
 
 
+
+
+/*flex-wrap: wrap;*/  
 #Ai {
     border:5px solid rgb(240, 217, 13);
     width: 700px;
     margin:20px 40px;
 }
 
+
+
+/*flex-wrap: wrap;*/  
 #coding{
     border:5px solid rgb(240, 217, 13);
     width: 350px;
@@ -130,6 +201,10 @@ p {
     margin:20px 0;
 }
 
+
+
+
+/*flex-wrap: wrap;*/  
 #solar {
     border:5px solid rgb(240, 217, 13);
     width: 400px;
@@ -137,6 +212,10 @@ p {
 }
 
 
+
+
+
+/*flex-wrap: wrap;*/  
 figcaption {
     margin-top: -50px;
     margin-left:50px;
@@ -145,16 +224,27 @@ figcaption {
 }
 
 
+
+
+
+/*flex-wrap: wrap;*/  
 a:hover {
     filter:brightness(50%);
     cursor:pointer;
 }
 
+
+
+
+/*flex-wrap: wrap;*/  
 a:active {
     color:red;
 }
 
 
+
+
+/*flex-wrap: wrap;*/  
 #Contact-me {
     background-image:linear-gradient(to top left, rgb(240, 240, 245), rgb(178, 216, 207), yellow);
     background-size: 830px;
@@ -174,13 +264,66 @@ a:active {
     
 }
 
+
+
+/*flex-wrap: wrap;*/  
 #Contact-me a {
     color: var(--fntclr);
     font-size: 200%;
 }
 
-@media screen and (max-width: 768px) {
-    header, main {
+
+
+/*flex-wrap: wrap;*/
+
+@media screen and (min-width:250px) and (max-width:850px) {
+    header, section, #Project-history, pre {
       flex-direction: column;
+      align-items: center;
+    }
+    #profile-pic{
+        top: 150px;
+        height:20%;
+        margin: 0 auto;
+    }
+    #Contact-me {
+        flex-direction: row;
+    }
+
+    h2 {
+        position:relative;
+        top:30px; 
+    }
+
+    p, #Project-history, #Contact-me{
+        top:0;
+        margin-top: 0;
+    }
+
+    Pre{
+        padding-top:250px;
+     
     }
 }
+
+
+@media screen and (max-width: 1233px) {
+    #Project-history {
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    h2 {
+        position:relative;
+        top:30px; 
+    }
+
+    p, #Project-history, #Contact-me{
+        top:0;
+        margin-top: 0;
+    }
+}
+
+
+
+
